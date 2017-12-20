@@ -1,7 +1,7 @@
 var request = require('request');
 const myVar = require('./env');
 
-function searchFor(movieTitle) {
+function get(movieTitle) {
 	request('https://www.googleapis.com/customsearch/v1?key='+myVar.apiKey+'&cx='+myVar.searchId+'&q=' + movieTitle, function(error, response, body) {
 		console.log('error:', error);
 		console.log('statusCode:', response && response.statusCode);
@@ -9,4 +9,4 @@ function searchFor(movieTitle) {
 	});
 }
 
-module.exports.searchFor = searchFor;
+module.exports.get = get;
